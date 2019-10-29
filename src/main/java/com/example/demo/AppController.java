@@ -22,7 +22,7 @@ public class AppController {
     // handler methods...
     @RequestMapping("/")
     public String viewHomePage(Model model) {
-        List<Tbl_Csr> listCSR = service.listAll();
+        List<TblProgramCSR> listCSR = service.listAll();
         model.addAttribute("listCSR", listCSR);
          
         return "index";
@@ -30,14 +30,14 @@ public class AppController {
     
     @RequestMapping("/new")
     public String showNewMemberPage(Model model) {
-    	Tbl_Csr csr = new Tbl_Csr();
+    	TblProgramCSR csr = new TblProgramCSR();
         model.addAttribute("csr", csr);
          
         return "new_csr";
     }
     
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveCsr(@ModelAttribute("csr") Tbl_Csr csr) {
+    public String saveCsr(@ModelAttribute("csr") TblProgramCSR csr) {
         service.save(csr);
          
         return "redirect:/";
@@ -46,7 +46,7 @@ public class AppController {
     @RequestMapping("/edit/{id}")
     public ModelAndView showEditCsrPage(@PathVariable(name = "id") int id) {
         ModelAndView mav = new ModelAndView("edit_csr");
-        Tbl_Csr tbl_csr = service.get(id);
+        TblProgramCSR tbl_csr = service.get(id);
         mav.addObject("tbl_csr", tbl_csr);
          
         return mav;
@@ -54,7 +54,7 @@ public class AppController {
     
     
     @RequestMapping(value = "/update", method = RequestMethod.GET)
-    public String updateCsr(@ModelAttribute("tbl_csr") Tbl_Csr tbl_csr) {
+    public String updateCsr(@ModelAttribute("tbl_csr") TblProgramCSR tbl_csr) {
         service.save(tbl_csr);
          
         return "redirect:/";

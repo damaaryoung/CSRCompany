@@ -4,6 +4,6 @@ package com.example.demo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CSRRepository extends JpaRepository<Tbl_Csr, Long> {
+public interface CSRRepository extends JpaRepository<TblProgramCSR, Long> {
 
 }

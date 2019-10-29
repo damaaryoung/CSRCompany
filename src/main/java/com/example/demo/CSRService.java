@@ -14,15 +14,15 @@ public class CSRService {
     @Autowired
     private CSRRepository repo;
      
-    public List<Tbl_Csr> listAll() {
+    public List<TblProgramCSR> listAll() {
         return repo.findAll();
     }
      
-    public void save(Tbl_Csr tbl_csr) {
+    public void save(TblProgramCSR tbl_csr) {
         repo.save(tbl_csr);
     }
      
-    public Tbl_Csr get(long id) {
+    public TblProgramCSR get(long id) {
         return repo.findById(id).get();
     }
      

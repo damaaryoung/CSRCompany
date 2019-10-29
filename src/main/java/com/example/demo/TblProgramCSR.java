@@ -1,7 +1,5 @@
 package com.example.demo;
 
-
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +11,7 @@ import java.util.Date;
  
 @Entity
 
-public class Tbl_Csr {
+public class TblProgramCSR {
     private Long id;
     private String name;
     private String category;
@@ -22,7 +20,7 @@ public class Tbl_Csr {
     private String plan_date;
     
  
-    protected Tbl_Csr() {
+    protected TblProgramCSR() {
     }
  
     @Id
